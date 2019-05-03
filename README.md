@@ -1,5 +1,28 @@
 # Burger Queen
 
+## Historias de Usuario_
+
+Yo como meserx, quiero poder registrar el pedido de un cliente.
+
+Quiero que el sistema me permita:
+1. Registrar el nombre del cliente
+2. Agregar cada producto pedido con sus específicaciones
+3. Editar un producto de la orden
+4. Eliminar un producto de la orden.
+5. Cancelar todo la orden.
+6. Ver detalle de la orden, icluyendo el precio de cada producto y total de la compra.
+7. Enviar pedido a cocina
+
+DOD
+* Haber recibido code review de al menos una compañera.
+* Hacer test unitarios y testear el producto manualmente.
+* Hacer tests de usabilidad e incorporar el feedback del usuario.
+* Desplegar la aplicación y etiquetar la versión (git tag).
+
+## Diagrama de flujo
+
+![Diagrama](./assets/images/FlowBurger.jpg)
+
 ## Preámbulo
 
 [React](https://reactjs.org/), [Angular](https://angular.io/) y [Vue](https://vuejs.org/)
