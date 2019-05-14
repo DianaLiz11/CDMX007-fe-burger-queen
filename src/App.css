@@ -38,4 +38,13 @@
 
 .container-options{
   height: 30em;
+  background-color: #DCFAE6;
+}
+
+.container-data-order{
+  background-color: #E4CCF6;
+}
+.size-menu-button{
+  width: 10em;
+  height: 4em;
 }

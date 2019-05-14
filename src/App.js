@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import PrincipalMenu from './components/PrincipalMenu'
+import PrincipalMenu from './components/PrincipalMenu';
+import Breakfast from './components/Breakfast';
+import Order from './components/Order';
 
 class App extends Component {
   render() {
@@ -12,13 +14,15 @@ class App extends Component {
             <PrincipalMenu />
             <div className='row'>
               <div className='col-md-12'>
-                <div className='container d-flex justify-content-around h-60 size-options'>hola</div>
+                <div className='container d-flex justify-content-around container-options'>
+                  <Breakfast />
+                </div>
               </div>
             </div>
           </div>
 
           <div className='col-md-4'>
-            nuestro bloque
+            <Order />
 
           </div>
         </div>
