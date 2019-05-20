@@ -14,7 +14,7 @@ class App extends Component {
             <PrincipalMenu />
             <div className='row'>
               <div className='col-md-12'>
-                <div className='container d-flex justify-content-around container-options'>
+                <div className='container d-flex justify-content-around container-options vh-100'>
                   <Breakfast />
                 </div>
               </div>

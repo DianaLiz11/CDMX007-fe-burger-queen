@@ -8,6 +8,24 @@ class Breakfast extends Component {
     this.state = {
       menu
     }
+    this.selectItem = this.selectItem.bind(this);
+  }
+
+  selectItem(e) {
+    // console.log(e.target.id);
+    const id = e.target.id;
+
+    console.log(id);
+
+    this.setState({
+
+      // menu: this.state.menu.breakfast.forEach(element =>{
+      //   if(element.id){
+      //     element.isSelected = true;
+      //   }
+      // })
+    })
+    console.log(this.state);
   }
 
   render() {
@@ -15,7 +33,7 @@ class Breakfast extends Component {
     const breakfastButtons= this.state.menu.breakfast.map(
       (product)=>{
         return(
-          <button key = {product.id} type='button' className='btn btn-outline-info my-2 size-menu-button'>{product.item}</button>
+          <button key = {product.id} id={product.id} type='button' className='btn btn-outline-info my-2 size-menu-button' onClick={this.selectItem}>{product.item}</button>
         );
       }
     );
@@ -23,11 +41,12 @@ class Breakfast extends Component {
     const breakfastIngredientsButtons= this.state.menu.breakfast[2].ingredients.map(
       (product)=>{
         return(
-          <button key = {product.name} type='button' className='btn btn-outline-success my-2 size-menu-button'>{product.name}</button>
+          <button key = {product.name} type='button' className='btn btn-outline-success my-2 size-menu-button active'>{product.name}</button>
         );
       }
     );
 
+console.log(breakfastButtons);
     return (
       <div className='row'>
         <div className='col-md-8'>
