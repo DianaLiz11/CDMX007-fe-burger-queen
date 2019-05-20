@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { principalMenu } from '../data/principalMenu.json';
+import {Link} from 'react-router-dom';
 
 class PrincipalMenu extends Component {
   render() {
+
+    const principalMenuButtons= principalMenu.map(
+      (option)=>{
+        return(
+          <Link key = {option.id} className='btn btn-outline-danger mb-5 size-button' to={option.link} role='button'>{option.item}</Link>
+        );
+      }
+    );
+
     return (
       <div className='row'>
         <div className='col-md-12 d-flex justify-content-around'>
-          <button type='button' className='btn btn-outline-danger mb-5 size-button'>Desayuno</button>
-          <button type='button' className='btn btn-outline-danger mb-5 size-button'>Comida</button>
-          <button type='button' className='btn btn-outline-danger mb-5 size-button'>Nuevo pedido</button>
-          <button type='button' className='btn btn-outline-danger mb-5 size-button'>Historial de pedidos</button>
+          {principalMenuButtons}
         </div>
       </div>
     )
