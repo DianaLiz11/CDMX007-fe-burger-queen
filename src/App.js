@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
+import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
-import PrincipalMenu from './components/PrincipalMenu'
+import PrincipalMenu from './components/PrincipalMenu';
+import Breakfast from './components/Breakfast';
+import Order from './components/Order';
+import NewOrder from './components/NewOrder';
 
 class App extends Component {
   render() {
     return (
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-8'>
-            <PrincipalMenu />
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className='container d-flex justify-content-around h-60 size-options'>hola</div>
+      <BrowserRouter>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-8'>
+              <PrincipalMenu />
+              <div className='row'>
+                <div className='col-md-12'>
+                  <div className='container d-flex justify-content-around container-options vh-100'>
+                    <Route path="/breakfast" component={Breakfast}/>
+                    <Route path="/newOrder" component={NewOrder}/>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className='col-md-4'>
-            nuestro bloque
+            <div className='col-md-4'>
+              <Order />
 
+            </div>
           </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }

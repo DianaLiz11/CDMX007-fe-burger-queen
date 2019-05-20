@@ -37,5 +37,20 @@
 }
 
 .container-options{
-  height: 30em;
+  border-radius: 10px;
+  background-color: #DCFAE6;
+}
+
+.container-order{
+  background-color: #DCFAE6;
+  border-radius: 4px;
+}
+
+.container-data-order{
+  background-color: #E4CCF6;
+  border-radius: 4px;
+}
+.size-menu-button{
+  width: 10em;
+  height: 4em;
 }

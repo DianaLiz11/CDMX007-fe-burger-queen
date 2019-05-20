@@ -1,0 +1,24 @@
+{
+  "principalMenu":[
+    {
+      "id": 1,
+      "item":"DESAYUNO",
+      "link":"/breakfast"
+    },
+    {
+      "id": 2,
+      "item":"COMIDA",
+      "link":"/food"
+    },
+    {
+      "id": 3,
+      "item":"NUEVO PEDIDO",
+      "link":"/newOrder"
+    },
+    {
+      "id": 4,
+      "item":"HISTORIAL DE PEDIDOS",
+      "link":"/ordersHistory"
+    }
+  ]
+}
