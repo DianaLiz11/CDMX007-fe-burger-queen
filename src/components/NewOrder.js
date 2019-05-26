@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class NewOrder extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.props.saveName(e.target.value);
+  }
+
+
   render() {
     return(
       <div className='container d-flex justify-content-center'>
         <form className='my-5'>
           <div className='form-group'>
-            <label for='txtName'>Nombre del cliente</label>
-            <input type='text' className='form-control' id='txtName' placeholder='Ingrese nombre' />
+            <label>Nombre del cliente</label>
+            <input type='text' className='form-control' id='txtName' placeholder='Ingrese nombre' onChange={this.handleChange} />
           </div>
-          <button type='button' className="btn btn-info btn-sm">Iniciar pedido</button>
         </form>
       </div>
     );

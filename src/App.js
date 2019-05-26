@@ -5,8 +5,23 @@ import PrincipalMenu from './components/PrincipalMenu';
 import Breakfast from './components/Breakfast';
 import Order from './components/Order';
 import NewOrder from './components/NewOrder';
+import Submenu from './components/Submenu';
+import { menu } from './data/menu.json';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state ={
+      menu,
+      custumerName: ''
+    }
+    this.saveNameCustomer = this.saveNameCustomer.bind(this);
+  }
+
+  saveNameCustomer(name) {
+    this.setState({custumerName: name});
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -16,16 +31,22 @@ class App extends Component {
               <PrincipalMenu />
               <div className='row'>
                 <div className='col-md-12'>
+                  <Route path="/food" component={Submenu}/>
+                  <Route path="/ordersHistory" component={Submenu}/>
+                </div>
+              </div>
+              <div className='row'>
+                <div className='col-md-12'>
                   <div className='container d-flex justify-content-around container-options vh-100'>
-                    <Route path="/breakfast" component={Breakfast}/>
-                    <Route path="/newOrder" component={NewOrder}/>
+                    <Route path="/breakfast"  render={(props) => <Breakfast {...props} />} />
+                    <Route path="/newOrder" render={() => <NewOrder saveName = {this.saveNameCustomer} />} />
                   </div>
                 </div>
               </div>
             </div>
 
             <div className='col-md-4'>
-              <Order />
+              <Order name = {this.state.custumerName} />
 
             </div>
           </div>

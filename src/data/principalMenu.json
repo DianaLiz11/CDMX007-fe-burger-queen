@@ -1,22 +1,22 @@
 {
   "principalMenu":[
     {
-      "id": 1,
+      "id": "PM01",
       "item":"DESAYUNO",
       "link":"/breakfast"
     },
     {
-      "id": 2,
+      "id": "PM02",
       "item":"COMIDA",
       "link":"/food"
     },
     {
-      "id": 3,
+      "id": "PM03",
       "item":"NUEVO PEDIDO",
       "link":"/newOrder"
     },
     {
-      "id": 4,
+      "id": "PM04",
       "item":"HISTORIAL DE PEDIDOS",
       "link":"/ordersHistory"
     }
