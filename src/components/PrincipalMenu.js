@@ -9,7 +9,7 @@ class PrincipalMenu extends Component {
     const principalMenuButtons= principalMenu.map(
       (option)=>{
         return(
-          <Link key = {option.id} className='btn btn-outline-danger mb-5 size-button' to={option.link} role='button'>{option.item}</Link>
+          <Link key = {option.id} className='btn btn-outline-danger mb-2 size-button' to={option.link} role='button'>{option.item}</Link>
         );
       }
     );

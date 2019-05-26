@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { menu } from '../data/menu.json';
-import { order } from '../data/order.json';
+import { breakfast } from '../data/breakfast.json';
 
 class Breakfast extends Component {
   constructor(){
     super();
     this.state = {
       menu,
-      order
+      breakfast
     }
     this.selectItem = this.selectItem.bind(this);
   }
@@ -19,15 +19,16 @@ class Breakfast extends Component {
 
     console.log(id);
 
-    this.setState({
-
-      order: this.state.order.breakfast.forEach(element =>{
-        if(element.id === id){
-          element.isSelected = true;
-        }
-      })
-    })
-    console.log(this.state);
+    // this.setState({
+    //
+    //   breakfast: this.state.breakfast.forEach(element =>{
+    //     if(element.id === id){
+    //       element.isSelected = true;
+    //       element.cantidad = 1;
+    //     }
+    //   })
+    // })
+    // console.log(this.state.breakfast);
   }
 
   render() {

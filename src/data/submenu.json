@@ -1,0 +1,41 @@
+{
+  "submenuFood":[
+    {
+      "id": "SF01",
+      "item":"HAMBURGUESA",
+      "link":"/food/hamburger"
+    },
+    {
+      "id": "SF02",
+      "item":"GUARNICIÓN",
+      "link":"/food/trimming"
+    },
+    {
+      "id": "SF03",
+      "item":"BEBIDAS",
+      "link":"/food/drinks"
+    },
+    {
+      "id": "SF04",
+      "item":"PROMOCIONES",
+      "link":"/food/offers"
+    }
+  ],
+  "submenuOrdersHistory":[
+    {
+      "id": "SH01",
+      "item":"PEDIDOS",
+      "link":"/ordersHistory/hamburger"
+    },
+    {
+      "id": "SH02",
+      "item":"PEDIDOS LISTOS",
+      "link":"/ordersHistory/trimming"
+    },
+    {
+      "id": "SH03",
+      "item":"PEDIDOS ENTREGADOS",
+      "link":"/ordersHistory/drinks"
+    }
+  ]
+}

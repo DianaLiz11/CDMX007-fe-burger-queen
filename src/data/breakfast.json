@@ -1,0 +1,49 @@
+{
+  "breakfast":[
+    {
+      "id": 1,
+      "item":"CAFÉ AMERICANO",
+      "price": 5,
+      "isSelected": false
+    },
+    {
+      "id": 2,
+      "item":"CAFÉ CON LECHE",
+      "price": 7,
+      "cantidad": 0,
+      "isSelected": false
+    },
+    {
+      "id": 3,
+      "item":"SANDWICH DE JAMÓN Y QUESO",
+      "price": 10,
+      "ingredients":[
+        {
+          "name":"LECHUGA",
+          "isRequested": true
+        },
+        {
+          "name":"ZANAHORIA",
+          "isRequested": true
+        },
+        {
+          "name":"CEBOLLA",
+          "isRequested": true
+        },
+        {
+          "name":"CHILE",
+          "isRequested": true
+        }
+      ],
+      "cantidad": 0,
+      "isSelected": false
+    },
+    {
+      "id": 4,
+      "item":"JUGO DE FRUTAS NATURAL",
+      "price": 7,
+      "cantidad": 0,
+      "isSelected": false
+    }
+  ]
+}
