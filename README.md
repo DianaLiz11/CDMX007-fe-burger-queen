@@ -1,6 +1,12 @@
 # Burger Queen
 
-## Historias de Usuario_
+## Definicón del problema
+
+Un pequeño restaurante de hamburguesas, que está creciendo, necesita una
+interfaz en la que puedan tomar pedidos usando una _tablet_, y enviarlos
+a la cocina para que se preparen ordenada y eficientemente.
+
+## Tareas Épicas
 
 Yo como meserx, quiero poder registrar el pedido de un cliente.
 
@@ -13,15 +19,21 @@ Quiero que el sistema me permita:
 6. Ver detalle de la orden, icluyendo el precio de cada producto y total de la compra.
 7. Enviar pedido a cocina
 
-DOD
-* Haber recibido code review de al menos una compañera.
-* Hacer test unitarios y testear el producto manualmente.
-* Hacer tests de usabilidad e incorporar el feedback del usuario.
-* Desplegar la aplicación y etiquetar la versión (git tag).
-
 ## Diagrama de flujo
 
 ![Diagrama](./assets/images/FlowBurger.jpg)
+
+## Prototipado
+
+El diseño realizado por la diseñadora de UX es el siguiente:
+
+[prototipo](https://marvelapp.com/1ee00d4g/screen/55755615)
+
+
+
+
+
+
 
 ## Preámbulo
 
