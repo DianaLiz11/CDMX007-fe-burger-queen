@@ -1,21 +1,21 @@
 export let Menu = {
   breakfast:[
     {
-      id: 1,
+      id: 'MB01',
       item:"CAFÉ AMERICANO",
       price: 5,
-      cantidad: 0,
+      quantity: 0,
       isSelected: false
     },
     {
-      id: 2,
+      id: 'MB02',
       item:"CAFÉ CON LECHE",
       price: 7,
-      cantidad: 0,
+      quantity: 0,
       isSelected: false
     },
     {
-      id: 3,
+      id: 'MB03',
       item:"SANDWICH DE JAMÓN Y QUESO",
       price: 10,
       ingredients:[
@@ -36,20 +36,20 @@ export let Menu = {
           isRequested: true
         }
       ],
-      cantidad: 0,
+      quantity: 0,
       isSelected: false
     },
     {
-      id: 4,
+      id: 'MB04',
       item:"JUGO DE FRUTAS NATURAL",
       price: 7,
-      cantidad: 0,
+      quantity: 0,
       isSelected: false
     }
   ],
   hamburger:[
     {
-      id: 5,
+      id: 'MH01',
       item:"SENCILLA",
       price: 10,
       ingredients:[
@@ -92,10 +92,10 @@ export let Menu = {
           "isRequested": false
         }
       ],
-      cantidad: 0
+      quantity: 0
     },
     {
-      id: 6,
+      id: 'MH02',
       item:"DOBLE",
       price: 15,
       ingredients:[
@@ -138,58 +138,58 @@ export let Menu = {
           isRequested: false
         }
       ],
-      cantidad: 0
+      quantity: 0
     }
   ],
   accompaniments: [
     {
-      id: 7,
+      id: 'MH03',
       item:"PAPAS FRITAS",
       price: 5,
-      cantidad: 0
+      quantity: 0
     },
     {
       id: 8,
       item:"AROS DE CEBOLLA",
       price: 5,
-      cantidad: 0
+      quantity: 0
     }
   ],
   drinks:[
     {
-      id: 8,
+      id: 'MD01',
       item:"AGUA 500ml",
       price: 5,
-      cantidad: 0
+      quantity: 0
     },
     {
-      id: 9,
+      id: 'MD02',
       item:"AGUA 750ml",
       price: 7,
-      cantidad: 0
+      quantity: 0
     },
     {
-      id: 10,
+      id: 'MD03',
       item:"REFRESCO 500ml",
       price: 7,
-      cantidad: 0
+      quantity: 0
     },
     {
-      id: 11,
+      id: 'MD04',
       item:"REFRESCO 750ml",
       price: 10,
-      cantidad: 0
+      quantity: 0
     }
   ],
   additional:[
     {
-      id: 12,
+      id: 'MA01',
       item:"QUESO",
       price: 1,
       isRequested: false
     },
     {
-      id: 13,
+      id: 'MA02',
       item:"HUEVO",
       price: 1,
       isRequested: false

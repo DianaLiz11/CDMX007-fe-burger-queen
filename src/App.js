@@ -6,20 +6,34 @@ import Breakfast from './components/Breakfast';
 import Order from './components/Order';
 import NewOrder from './components/NewOrder';
 import Submenu from './components/Submenu';
-import { menu } from './data/menu.json';
+// import { menu } from './data/menu.json';
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state ={
-      menu,
-      custumerName: ''
+      // menu,
+      custumerName: '',
+      ticket:[],
+      total:0
     }
     this.saveNameCustomer = this.saveNameCustomer.bind(this);
+    this.addTicket = this.addTicket.bind(this);
   }
 
   saveNameCustomer(name) {
     this.setState({custumerName: name});
+  }
+
+  addTicket(order){
+    this.setState(
+      {
+        ticket: [...this.state.ticket, order],
+        total: this.state.total + (order.price * order.quantity)
+      }
+    )
+    console.log(this.state.ticket);
+    console.log(order);
   }
 
   render() {
@@ -38,7 +52,7 @@ class App extends Component {
               <div className='row'>
                 <div className='col-md-12'>
                   <div className='container d-flex justify-content-around container-options vh-100'>
-                    <Route path="/breakfast"  render={(props) => <Breakfast {...props} />} />
+                    <Route path="/breakfast"  render={(props) => <Breakfast addElement = {this.addTicket} />} />
                     <Route path="/newOrder" render={() => <NewOrder saveName = {this.saveNameCustomer} />} />
                   </div>
                 </div>
@@ -46,8 +60,7 @@ class App extends Component {
             </div>
 
             <div className='col-md-4'>
-              <Order name = {this.state.custumerName} />
-
+              <Order name = {this.state.custumerName} productsSelected = {this.state.ticket} totalOrder= {this.state.total}  />
             </div>
           </div>
         </div>
