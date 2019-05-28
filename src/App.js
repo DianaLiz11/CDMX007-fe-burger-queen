@@ -10,15 +10,16 @@ import Submenu from './components/Submenu';
 
 class App extends Component {
   constructor(props){
-    super(props)
-    this.state ={
-      // menu,
+    super(props);
+    this.state = {
       custumerName: '',
-      ticket:[],
-      total:0
-    }
+      total:0,
+      ticket:[]
+    };
+    // this.ticket=[];+++++++
     this.saveNameCustomer = this.saveNameCustomer.bind(this);
     this.addTicket = this.addTicket.bind(this);
+    this.deleteTicket = this.deleteTicket.bind(this);
   }
 
   saveNameCustomer(name) {
@@ -26,14 +27,28 @@ class App extends Component {
   }
 
   addTicket(order){
+    console.log('order', order);
+    //debugger;
+    order.idTicket = 'T'+(this.state.ticket.length + 1);
+    // this.ticket.push(order);++++++++++++
     this.setState(
       {
         ticket: [...this.state.ticket, order],
         total: this.state.total + (order.price * order.quantity)
       }
     )
+
     console.log(this.state.ticket);
     console.log(order);
+  }
+
+  deleteTicket(indexTicket){
+    this.setState({
+      ticket: this.state.ticket.filter((product, index) => {
+        return indexTicket !== product.idTicket
+      })
+
+    })
   }
 
   render() {
@@ -60,7 +75,7 @@ class App extends Component {
             </div>
 
             <div className='col-md-4'>
-              <Order name = {this.state.custumerName} productsSelected = {this.state.ticket} totalOrder= {this.state.total}  />
+              <Order name = {this.state.custumerName} productsSelected = {this.state.ticket} totalOrder= {this.state.total} deleteElement = {this.deleteTicket} />
             </div>
           </div>
         </div>

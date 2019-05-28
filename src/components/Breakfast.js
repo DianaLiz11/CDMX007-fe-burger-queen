@@ -3,13 +3,14 @@ import '../App.css';
 // import { menu } from '../data/menu.json';
 // import { breakfast } from '../data/breakfast.json';
 import { Menu } from '../data/menu.js';
+import { MenuBase } from '../data/menuBase.js';
 
 
 class Breakfast extends Component {
   constructor(props){
     super(props);
     this.state = {
-      menu:Menu,
+      menu:Object.assign({}, Menu),
       quantityItem:1
     }
     this.selectItem = this.selectItem.bind(this);
@@ -28,6 +29,7 @@ class Breakfast extends Component {
     let menuTemp = this.state.menu;
 
     menuTemp.breakfast.forEach(element => {
+      element.isSelected = false;
       if(element.id === id){
         element.isSelected = true;
         element.quantity = 1;
@@ -39,13 +41,13 @@ class Breakfast extends Component {
   }
 
   changeIngredients(e){
-    console.log(e.target.id);
-    console.log(e.target.id.substr(4));
     let menuTemp = this.state.menu;
 
     menuTemp.breakfast[2].ingredients.forEach(element => {
+      //element.isRequested= true;
       if(element.name === e.target.id.substr(4)){
-        (element.isRequested) ? element.isRequested= false : element.isRequested=true;
+      //  element.isRequested=false;
+      (element.isRequested) ? element.isRequested= false : element.isRequested=true;
       }
     });
 
@@ -55,13 +57,14 @@ class Breakfast extends Component {
   }
 
   addProduct(){
-    let product=[];
+    let product={};
     const quantity = this.state.quantityItem;
     //let idSelected;
     this.state.menu.breakfast.forEach(element =>{
         if(element.isSelected){
           element.quantity = quantity;
-          product = element;
+          product = {...element, ...{quantity: quantity}};
+          // console.log('product', product)
           //idSelected = element.id;
         }
       })
@@ -70,9 +73,9 @@ class Breakfast extends Component {
 
     this.setState({
       quantityItem: 1,
-      menu: Menu
+      menu: MenuBase
+      //menu: Object.assign({}, Menu)
     })
-
   }
 
   increase(){
@@ -109,7 +112,7 @@ class Breakfast extends Component {
       }
     );
 
-console.log(breakfastButtons);
+// console.log(breakfastButtons);
     return (
       <div>
         <div className='row'>
