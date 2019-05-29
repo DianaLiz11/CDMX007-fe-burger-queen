@@ -18,24 +18,6 @@ export let MenuBase = {
       id: 'MB03',
       item:"SANDWICH DE JAMÓN Y QUESO",
       price: 10,
-      // ingredients:[
-      //   {
-      //     name:"LECHUGA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"ZANAHORIA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"CEBOLLA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"CHILE",
-      //     isRequested: true
-      //   }
-      // ],
       quantity: 0,
       isSelected: false
     },
@@ -70,92 +52,12 @@ export let MenuBase = {
       id: 'MH01',
       item:"HAMBURGUESA SENCILLA",
       price: 10,
-      // ingredients:[
-      //   {
-      //     name:"LECHUGA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"CEBOLLA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"JITOMATE",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"CHILE",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"PEPINILLOS",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"AGUACATE",
-      //     isRequested: true
-      //   }
-      // ],
-      // meat:[
-      //   {
-      //     name:"RES",
-      //     isRequested: false
-      //   },
-      //   {
-      //     name:"POLLO",
-      //     isRequested: false
-      //   },
-      //   {
-      //     "name":"VEGETARIANA",
-      //     "isRequested": false
-      //   }
-      // ],
       quantity: 0
     },
     {
       id: 'MH02',
       item:"HAMBURGUESA DOBLE",
       price: 15,
-      // ingredients:[
-      //   {
-      //     name:"LECHUGA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"CEBOLLA",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"JITOMATE",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"CHILE",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"PEPINILLOS",
-      //     isRequested: true
-      //   },
-      //   {
-      //     name:"AGUACATE",
-      //     isRequested: true
-      //   }
-      // ],
-      // meat:[
-      //   {
-      //     name:"RES",
-      //     isRequested: false
-      //   },
-      //   {
-      //     name:"POLLO",
-      //     isRequested: false
-      //   },
-      //   {
-      //     name:"VEGETARIANA",
-      //     isRequested: false
-      //   }
-      // ],
       quantity: 0
     }
   ],
@@ -201,15 +103,17 @@ export let MenuBase = {
   ],
   accompaniments: [
     {
-      id: 'MH03',
+      id: 'MG01',
       item:"PAPAS FRITAS",
       price: 5,
+      isSelected: false,
       quantity: 0
     },
     {
-      id: 8,
+      id: 'MG02',
       item:"AROS DE CEBOLLA",
       price: 5,
+      isSelected: false,
       quantity: 0
     }
   ],
@@ -218,24 +122,28 @@ export let MenuBase = {
       id: 'MD01',
       item:"AGUA 500ml",
       price: 5,
+      isSelected: false,
       quantity: 0
     },
     {
       id: 'MD02',
       item:"AGUA 750ml",
       price: 7,
+      isSelected: false,
       quantity: 0
     },
     {
       id: 'MD03',
       item:"REFRESCO 500ml",
       price: 7,
+      isSelected: false,
       quantity: 0
     },
     {
       id: 'MD04',
       item:"REFRESCO 750ml",
       price: 10,
+      isSelected: false,
       quantity: 0
     }
   ],

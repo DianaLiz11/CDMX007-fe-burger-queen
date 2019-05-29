@@ -152,38 +152,38 @@ class Food extends Component {
       }
     );
 
-    return (
-      <div>
-        <div className='row'>
-          <div className='col-md-12 d-flex justify-content-around flex-wrap'>
-            {hamburgerSizeButtons}
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-md-12 d-flex justify-content-around flex-wrap'>
-            {hamburgerMeatButtons}
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col-md-12 d-flex justify-content-around flex-wrap' >
-            {hamburgerIngredientsButtons}
-          </div>
-        </div>
-        <div className='container fixed-bottom d-flex flex-row'>
-          <div className='col-md-4 d-flex justify-content-center'>
-            <div className='border border-secondary size-quntity-container d-flex justify-content-center align-items-center'>
-              Cantidad
-              <button type='button' className='btn btn-light mx-2' onClick={this.increase} ><i className="fas fa-sort-up"></i></button>
-              <span>{this.state.quantityItem}</span>
-              <button type='button' className='btn btn-light mx-2' onClick={this.decrease}><i className="fas fa-sort-down"></i></button>
+      return (
+        <div>
+          <div className='row'>
+            <div className='col-md-12 d-flex justify-content-around flex-wrap'>
+              {hamburgerSizeButtons}
             </div>
           </div>
-          <div className='col-md-4 d-flex justify-content-center'>
-            <button type='button' className='btn button-add mb-5' onClick={this.addProduct}>AGREGAR</button>
+          <div className='row'>
+            <div className='col-md-12 d-flex justify-content-around flex-wrap'>
+              {hamburgerMeatButtons}
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-md-12 d-flex justify-content-around flex-wrap' >
+              {hamburgerIngredientsButtons}
+            </div>
+          </div>
+          <div className='container fixed-bottom d-flex flex-row'>
+            <div className='col-md-4 d-flex justify-content-center'>
+              <div className='border border-secondary size-quntity-container d-flex justify-content-center align-items-center'>
+                Cantidad
+                <button type='button' className='btn btn-light mx-2' onClick={this.increase} ><i className="fas fa-sort-up"></i></button>
+                <span>{this.state.quantityItem}</span>
+                <button type='button' className='btn btn-light mx-2' onClick={this.decrease}><i className="fas fa-sort-down"></i></button>
+              </div>
+            </div>
+            <div className='col-md-4 d-flex justify-content-center'>
+              <button type='button' className='btn button-add mb-5' onClick={this.addProduct}>AGREGAR</button>
+            </div>
           </div>
         </div>
-      </div>
-    );
+      );
   }
 }
 

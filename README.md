@@ -29,6 +29,12 @@ El diseño realizado por la diseñadora de UX es el siguiente:
 
 [prototipo](https://marvelapp.com/1ee00d4g/screen/55755615)
 
+## Presentación
+
+[presentación](https://docs.google.com/presentation/d/17xNrC1XbrwN2OKAKYYX4J0ILfkOxytZcTitLcCoWrWc/edit?usp=sharing)
+
+
+
 
 
 

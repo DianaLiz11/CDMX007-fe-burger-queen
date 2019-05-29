@@ -2,38 +2,28 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class Order extends Component {
-  // constructor(props){
-  //   super(props);
-  //   // this.delete = this.delete.bind(this);
-  // }
+  constructor(props){
+    super(props);
+    this.cancelOrder = this.cancelOrder.bind(this);
+    this.payOrder = this.payOrder.bind(this);
+  }
 
   delete(product){
     console.log(product.idTicket);
-
     this.props.deleteElement(product.idTicket);
+  }
 
-    // this.setState({
-    //
-    //   //menu: Object.assign({}, Menu)
-    // })
+  cancelOrder(){
+    this.props.cancel();
+  }
+
+  payOrder(){
+    this.props.pay();
   }
 
   render() {
-    // let ingredientsOmitted = '';
     console.log(this.props.productsSelected);
     // debugger;
-    // this.props.productsSelected.forEach(item => {
-    //   if(item.ingredients){
-    //     item.ingredientsOmitted = '';
-    //     item.ingredients.forEach(ingredient =>{
-    //       if(ingredient.isRequested === false){
-    //         item.ingredientsOmitted += ' /SIN '+ingredient.name;
-    //       }
-    //     })
-    //     console.log(item.ingredientsOmitted);
-    //   }
-    //   console.log(item);
-    // })
 
     const products = this.props.productsSelected.map(
       (product, index)=>{
@@ -71,12 +61,20 @@ class Order extends Component {
           </div>
         </div>
         <div className='row'>
-          <div className='container col-md-12 container-order vh-100 border border-secondary mb-1 shadow'>
-              {products}
-              <div className='row'>
-                <div className='col-md-5 offset-md-3'><span className='font-weight-bold'>Total</span></div>
-                <div className='col-md-3 '><span className='font-weight-bold'>$ {this.props.totalOrder}</span></div>
+          <div className='container col-md-12 container-order vh-100 border border-secondary mb-1 shadow h-75' >
+            {products}
+            <div className='row'>
+              <div className='col-md-5 offset-md-3'><span className='font-weight-bold'>Total</span></div>
+              <div className='col-md-3 '><span className='font-weight-bold'>$ {this.props.totalOrder}</span></div>
+            </div>
+            <div className='row position-sticky'>
+              <div className='col-md-6 '>
+                <button type='button' className='btn button-terminar'onClick={this.cancelOrder}>CANCELAR ORDEN</button>
               </div>
+              <div className='col-md-6 '>
+                <button type='button' className='btn button-terminar'onClick={this.payOrder}>PAGAR </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

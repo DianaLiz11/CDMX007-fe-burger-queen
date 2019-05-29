@@ -149,7 +149,7 @@ class Breakfast extends Component {
               </div>
             </div>
           </div>
-          <div className='col-md-4 d-block justify-content-around'>
+          <div className='col-md-4 d-flex flex-column justify-content-center'>
             <h5 className='text-secondary text-center mt-2'>BEBIDAS</h5>
             {breakfastButtons[0]}
             {breakfastButtons[1]}
