@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import '../App.css';
-// import { menu } from '../data/menu.json';
-// import { breakfast } from '../data/breakfast.json';
 import { Menu } from '../data/menu.js';
 import { MenuBase } from '../data/menuBase.js';
 
 
-class Breakfast extends Component {
+class Food extends Component {
   constructor(props){
     super(props);
     this.state = {
       menu:Object.assign({}, Menu),
       quantityItem:1,
+      meatSelected: '',
       ingredientsSelected:''
     }
     this.selectItem = this.selectItem.bind(this);
+    this.selectMeat = this.selectMeat.bind(this);
     this.changeIngredients = this.changeIngredients.bind(this);
     this.addProduct = this.addProduct.bind(this);
     this.increase = this.increase.bind(this);
@@ -22,18 +22,15 @@ class Breakfast extends Component {
   }
 
   selectItem(e) {
-    // console.log(e.target.id);
+    console.log(e.target.id);
     const id = e.target.id;
-
-    console.log(id);
-
     let menuTemp = this.state.menu;
 
-    menuTemp.breakfast.forEach(element => {
+    menuTemp.hamburger.forEach(element => {
       element.isSelected = false;
       if(element.id === id){
         element.isSelected = true;
-        element.quantity = 1;
+        // element.quantity = 1;
       }
     });
     this.setState({
@@ -41,12 +38,33 @@ class Breakfast extends Component {
     })
   }
 
+  selectMeat(e){
+    console.log(e.target.id);
+    // let menuTemp = this.state.menu;
+    // let meat ='';
+    //
+    // menuTemp.meat.forEach(element => {
+    //   element.isRequested = false;
+    //   if(element.id === id){
+    //     element.isRequested = true;
+    //     meat = ele
+    //   }
+    // });
+    // this.setState({
+    //   menu: menuTemp
+    // })
+    this.setState({
+      meatSelected: ' /' + e.target.id
+    })
+  }
+
   changeIngredients(e){
+    console.log(e.target.id);
     // let menuTemp = this.state.menu;
     //
-    // menuTemp.breakfast[2].ingredients.forEach(element => {
+    // menuTemp.ingredients.forEach(element => {
     //   //element.isRequested= true;
-    //   if(element.name === e.target.id.substr(4)){
+    //   if(element.name === e.target.id){
     //   //  element.isRequested=false;
     //   (element.isRequested) ? element.isRequested= false : element.isRequested=true;
     //   }
@@ -55,6 +73,7 @@ class Breakfast extends Component {
     // this.setState({
     //      menu: menuTemp
     //    });
+
     this.setState({
       ingredientsSelected: this.state.ingredientsSelected + ' /SIN ' + e.target.id
     })
@@ -62,40 +81,34 @@ class Breakfast extends Component {
 
   addProduct(){
     let product={};
-    // const quantity = this.state.quantityItem;
-    // //let idSelected;
-    // this.state.menu.breakfast.forEach(element =>{
-    //     if(element.isSelected){
-    //       element.quantity = quantity;
-    //       product = {...element, ...{quantity: quantity}};
-    //       // console.log('product', product)
-    //       //idSelected = element.id;
-    //     }
-    //   })
-
     let menuTemp = this.state.menu;
     const quantity = this.state.quantityItem;
-    menuTemp.breakfast.forEach(element => {
+    menuTemp.hamburger.forEach(element => {
+      console.log('elememnto:'+element);
       if(element.isSelected){
         element.quantity = quantity;
 
+        if(this.state.meatSelected !== ''){
+          element.meat = this.state.meatSelected;
+        }
         if(this.state.ingredientsSelected !== ''){
           element.ingredients = this.state.ingredientsSelected;
         }
         product = element;
       }
     });
-    // this.setState({
-    //   menu: menuTemp
-    // })
+    this.setState({
+      menu: menuTemp
+    })
 
+    console.log('producto a enviar:'+product);
     this.props.addElement(product);
 
     this.setState({
       quantityItem: 1,
       menu: MenuBase,
+      meatSelected:'',
       ingredientsSelected:''
-      //menu: Object.assign({}, Menu)
     })
   }
 
@@ -115,17 +128,23 @@ class Breakfast extends Component {
 
   render() {
 
-    // const idSandwich = this.state.menu.breakfast[2].id;
-
-    const breakfastButtons= this.state.menu.breakfast.map(
+    const hamburgerSizeButtons= this.state.menu.hamburger.map(
       (product)=>{
         return(
-          <button key = {product.id} id={product.id} type='button' className='btn btn-outline-info my-2 size-menu-button' onClick={this.selectItem}>{product.item}</button>
+          <button key = {product.id} id={product.id} type='button' className='btn btn-outline-info my-2 size-menu-button' onClick={this.selectItem} > {product.item}</button>
         );
       }
     );
 
-    const breakfastIngredientsButtons= this.state.menu.ingredientsSandwich.map(
+    const hamburgerMeatButtons= this.state.menu.meat.map(
+      (product)=>{
+        return(
+          <button key = {product.name} id={product.name} type='button' className='btn btn-outline-info my-2 size-menu-button' onClick={this.selectMeat}>{product.name}</button>
+        );
+      }
+    );
+
+    const hamburgerIngredientsButtons= this.state.menu.ingredients.map(
       (product)=>{
         return(
           <button key = {product.name} id={product.name} type='button' className='btn btn-outline-success my-2 size-menu-button active' onClick={this.changeIngredients} >{product.name}</button>
@@ -133,27 +152,21 @@ class Breakfast extends Component {
       }
     );
 
-// console.log(breakfastButtons);
     return (
       <div>
         <div className='row'>
-          <div className='col-md-8'>
-            <div className='row'>
-              <div className='col-md-12 d-flex justify-content-around flex-wrap'>
-                {breakfastButtons[2]}
-              </div>
-            </div>
-            <div className='row'>
-              <div className='col-md-12 d-flex justify-content-around flex-wrap'>
-                {breakfastIngredientsButtons}
-              </div>
-            </div>
+          <div className='col-md-12 d-flex justify-content-around flex-wrap'>
+            {hamburgerSizeButtons}
           </div>
-          <div className='col-md-4 d-block justify-content-around'>
-            <h5 className='text-secondary text-center mt-2'>BEBIDAS</h5>
-            {breakfastButtons[0]}
-            {breakfastButtons[1]}
-            {breakfastButtons[3]}
+        </div>
+        <div className='row'>
+          <div className='col-md-12 d-flex justify-content-around flex-wrap'>
+            {hamburgerMeatButtons}
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-12 d-flex justify-content-around flex-wrap' >
+            {hamburgerIngredientsButtons}
           </div>
         </div>
         <div className='container fixed-bottom d-flex flex-row'>
@@ -170,9 +183,8 @@ class Breakfast extends Component {
           </div>
         </div>
       </div>
-
     );
   }
 }
 
-export default Breakfast;
+export default Food;

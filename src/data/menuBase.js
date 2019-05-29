@@ -1,4 +1,4 @@
-export let Menu = {
+export let MenuBase = {
   breakfast:[
     {
       id: 'MB01',
@@ -68,7 +68,7 @@ export let Menu = {
   hamburger:[
     {
       id: 'MH01',
-      item:" HAMBURGUESA SENCILLA",
+      item:"HAMBURGUESA SENCILLA",
       price: 10,
       // ingredients:[
       //   {
@@ -157,7 +157,7 @@ export let Menu = {
       //   }
       // ],
       quantity: 0
-    },
+    }
   ],
   ingredients:[
     {
