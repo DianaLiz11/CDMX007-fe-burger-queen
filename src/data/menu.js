@@ -18,24 +18,24 @@ export let Menu = {
       id: 'MB03',
       item:"SANDWICH DE JAMÓN Y QUESO",
       price: 10,
-      ingredients:[
-        {
-          name:"LECHUGA",
-          isRequested: true
-        },
-        {
-          name:"ZANAHORIA",
-          isRequested: true
-        },
-        {
-          name:"CEBOLLA",
-          isRequested: true
-        },
-        {
-          name:"CHILE",
-          isRequested: true
-        }
-      ],
+      // ingredients:[
+      //   {
+      //     name:"LECHUGA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"ZANAHORIA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"CEBOLLA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"CHILE",
+      //     isRequested: true
+      //   }
+      // ],
       quantity: 0,
       isSelected: false
     },
@@ -47,98 +47,156 @@ export let Menu = {
       isSelected: false
     }
   ],
+  ingredientsSandwich:[
+    {
+      name:"LECHUGA",
+      isRequested: true
+    },
+    {
+      name:"ZANAHORIA",
+      isRequested: true
+    },
+    {
+      name:"CEBOLLA",
+      isRequested: true
+    },
+    {
+      name:"CHILE",
+      isRequested: true
+    }
+  ],
   hamburger:[
     {
       id: 'MH01',
-      item:"SENCILLA",
+      item:" HAMBURGUESA SENCILLA",
       price: 10,
-      ingredients:[
-        {
-          name:"LECHUGA",
-          isRequested: true
-        },
-        {
-          name:"CEBOLLA",
-          isRequested: true
-        },
-        {
-          name:"JITOMATE",
-          isRequested: true
-        },
-        {
-          name:"CHILE",
-          isRequested: true
-        },
-        {
-          name:"PEPINILLOS",
-          isRequested: true
-        },
-        {
-          name:"AGUACATE",
-          isRequested: true
-        }
-      ],
-      meat:[
-        {
-          name:"RES",
-          isRequested: false
-        },
-        {
-          name:"POLLO",
-          isRequested: false
-        },
-        {
-          "name":"VEGETARIANA",
-          "isRequested": false
-        }
-      ],
+      // ingredients:[
+      //   {
+      //     name:"LECHUGA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"CEBOLLA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"JITOMATE",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"CHILE",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"PEPINILLOS",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"AGUACATE",
+      //     isRequested: true
+      //   }
+      // ],
+      // meat:[
+      //   {
+      //     name:"RES",
+      //     isRequested: false
+      //   },
+      //   {
+      //     name:"POLLO",
+      //     isRequested: false
+      //   },
+      //   {
+      //     "name":"VEGETARIANA",
+      //     "isRequested": false
+      //   }
+      // ],
       quantity: 0
     },
     {
       id: 'MH02',
-      item:"DOBLE",
+      item:"HAMBURGUESA DOBLE",
       price: 15,
-      ingredients:[
-        {
-          name:"LECHUGA",
-          isRequested: true
-        },
-        {
-          name:"CEBOLLA",
-          isRequested: true
-        },
-        {
-          name:"JITOMATE",
-          isRequested: true
-        },
-        {
-          name:"CHILE",
-          isRequested: true
-        },
-        {
-          name:"PEPINILLOS",
-          isRequested: true
-        },
-        {
-          name:"AGUACATE",
-          isRequested: true
-        }
-      ],
-      meat:[
-        {
-          name:"RES",
-          isRequested: false
-        },
-        {
-          name:"POLLO",
-          isRequested: false
-        },
-        {
-          name:"VEGETARIANA",
-          isRequested: false
-        }
-      ],
+      // ingredients:[
+      //   {
+      //     name:"LECHUGA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"CEBOLLA",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"JITOMATE",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"CHILE",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"PEPINILLOS",
+      //     isRequested: true
+      //   },
+      //   {
+      //     name:"AGUACATE",
+      //     isRequested: true
+      //   }
+      // ],
+      // meat:[
+      //   {
+      //     name:"RES",
+      //     isRequested: false
+      //   },
+      //   {
+      //     name:"POLLO",
+      //     isRequested: false
+      //   },
+      //   {
+      //     name:"VEGETARIANA",
+      //     isRequested: false
+      //   }
+      // ],
       quantity: 0
+    },
+  ],
+  ingredients:[
+    {
+      name:"LECHUGA",
+      isRequested: true
+    },
+    {
+      name:"CEBOLLA",
+      isRequested: true
+    },
+    {
+      name:"JITOMATE",
+      isRequested: true
+    },
+    {
+      name:"CHILE",
+      isRequested: true
+    },
+    {
+      name:"PEPINILLOS",
+      isRequested: true
+    },
+    {
+      name:"AGUACATE",
+      isRequested: true
+    }
+  ],
+  meat:[
+    {
+      name:"RES",
+      isRequested: false
+    },
+    {
+      name:"POLLO",
+      isRequested: false
+    },
+    {
+      name:"VEGETARIANA",
+      isRequested: false
     }
   ],
   accompaniments: [

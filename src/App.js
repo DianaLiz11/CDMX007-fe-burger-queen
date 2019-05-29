@@ -6,6 +6,7 @@ import Breakfast from './components/Breakfast';
 import Order from './components/Order';
 import NewOrder from './components/NewOrder';
 import Submenu from './components/Submenu';
+import Food from './components/Food';
 // import { menu } from './data/menu.json';
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
   }
 
   addTicket(order){
-    console.log('order', order);
+    console.log('order' + order);
     //debugger;
     order.idTicket = 'T'+(this.state.ticket.length + 1);
     // this.ticket.push(order);++++++++++++
@@ -43,10 +44,18 @@ class App extends Component {
   }
 
   deleteTicket(indexTicket){
+    let cost =0;
+    this.state.ticket.forEach(element => {
+      if(indexTicket === element.idTicket){
+        cost = element.price * element.quantity;
+      }
+    })
+
     this.setState({
       ticket: this.state.ticket.filter((product, index) => {
         return indexTicket !== product.idTicket
-      })
+      }),
+      total: (this.state.total - cost)
 
     })
   }
@@ -69,6 +78,7 @@ class App extends Component {
                   <div className='container d-flex justify-content-around container-options vh-100'>
                     <Route path="/breakfast"  render={(props) => <Breakfast addElement = {this.addTicket} />} />
                     <Route path="/newOrder" render={() => <NewOrder saveName = {this.saveNameCustomer} />} />
+                    <Route path="/food/hamburger" render={() => <Food addElement = {this.addTicket} />} />
                   </div>
                 </div>
               </div>

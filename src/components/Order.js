@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import '../App.css';
 
 class Order extends Component {
-  constructor(props){
-    super(props);
-    // this.delete = this.delete.bind(this);
-  }
+  // constructor(props){
+  //   super(props);
+  //   // this.delete = this.delete.bind(this);
+  // }
 
   delete(product){
     console.log(product.idTicket);
@@ -22,18 +22,18 @@ class Order extends Component {
     // let ingredientsOmitted = '';
     console.log(this.props.productsSelected);
     // debugger;
-    this.props.productsSelected.forEach(item => {
-      if(item.ingredients){
-        item.ingredientsOmitted = '';
-        item.ingredients.forEach(ingredient =>{
-          if(ingredient.isRequested === false){
-            item.ingredientsOmitted += ' /SIN '+ingredient.name;
-          }
-        })
-        console.log(item.ingredientsOmitted);
-      }
-      console.log(item);
-    })
+    // this.props.productsSelected.forEach(item => {
+    //   if(item.ingredients){
+    //     item.ingredientsOmitted = '';
+    //     item.ingredients.forEach(ingredient =>{
+    //       if(ingredient.isRequested === false){
+    //         item.ingredientsOmitted += ' /SIN '+ingredient.name;
+    //       }
+    //     })
+    //     console.log(item.ingredientsOmitted);
+    //   }
+    //   console.log(item);
+    // })
 
     const products = this.props.productsSelected.map(
       (product, index)=>{
@@ -47,7 +47,8 @@ class Order extends Component {
             </div>
             <div className='col-md-5' >
               {product.item}
-              {(product.ingredientsOmitted) ? product.ingredientsOmitted : ''}
+              {(product.meat) ? product.meat : ''}
+              {(product.ingredients) ? product.ingredients : ''}
             </div>
             <div className='col-md-3' >
               $ {product.price}
