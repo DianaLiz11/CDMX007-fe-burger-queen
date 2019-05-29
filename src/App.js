@@ -7,6 +7,8 @@ import Order from './components/Order';
 import NewOrder from './components/NewOrder';
 import Submenu from './components/Submenu';
 import Food from './components/Food';
+import Accompaniments from './components/Accompaniments';
+import Drinks from './components/Drinks';
 // import { menu } from './data/menu.json';
 
 class App extends Component {
@@ -21,6 +23,8 @@ class App extends Component {
     this.saveNameCustomer = this.saveNameCustomer.bind(this);
     this.addTicket = this.addTicket.bind(this);
     this.deleteTicket = this.deleteTicket.bind(this);
+    this.cancel = this.cancel.bind(this);
+    this.pay = this.pay.bind(this);
   }
 
   saveNameCustomer(name) {
@@ -60,6 +64,25 @@ class App extends Component {
     })
   }
 
+  cancel(){
+    console.log('cancelando');
+    this.setState( {
+      custumerName: '',
+      total:0,
+      ticket:[]
+    });
+  }
+
+  pay(){
+    console.log('pagar');
+    this.setState ({
+      custumerName: '',
+      total:0,
+      ticket:[]
+    });
+
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -78,14 +101,16 @@ class App extends Component {
                   <div className='container d-flex justify-content-around container-options vh-100'>
                     <Route path="/breakfast"  render={(props) => <Breakfast addElement = {this.addTicket} />} />
                     <Route path="/newOrder" render={() => <NewOrder saveName = {this.saveNameCustomer} />} />
-                    <Route path="/food/hamburger" render={() => <Food addElement = {this.addTicket} />} />
+                    <Route path="/food/hamburger" render={(props) => <Food addElement = {this.addTicket} />} />
+                    <Route path="/food/accompaniments" render={() => <Accompaniments addElement = {this.addTicket} />} />
+                    <Route path="/food/drinks" render={() => <Drinks addElement = {this.addTicket} />} />
                   </div>
                 </div>
               </div>
             </div>
 
             <div className='col-md-4'>
-              <Order name = {this.state.custumerName} productsSelected = {this.state.ticket} totalOrder= {this.state.total} deleteElement = {this.deleteTicket} />
+              <Order name = {this.state.custumerName} productsSelected = {this.state.ticket} totalOrder= {this.state.total} deleteElement = {this.deleteTicket} cancel={this.cancel} pay={this.pay} />
             </div>
           </div>
         </div>
@@ -93,19 +118,5 @@ class App extends Component {
     );
   }
 }
-
-//
-// <div class="container">
-// <div class="row">
-//         <div class="col-md-8">
-//           .col-md-8
-//           <div class="row">
-//             <div class="col-md-6">.col-md-6</div>
-//             <div class="col-md-6">.col-md-6</div>
-//           </div>
-//         </div>
-//         <div class="col-md-4">.col-md-4</div>
-//       </div>
-// </div>
 
 export default App;
